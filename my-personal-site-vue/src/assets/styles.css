@@ -1,0 +1,127 @@
+template {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+a {
+    color: blue;
+}
+
+.about-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  border: 3px solid black;
+  padding: 20px;
+}
+
+.about-image {
+  padding: 10px;
+}
+
+#selfie {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* Game tic-tac-toe CSS */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+/* Game ball breaker CSS */
+
+.game-window {
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;       /* center horizontally */
+  border: 2px solid #000;  /* similar to Tic Tac Toe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+/* canvas fill */
+#gameCanvas {
+  background-color: #e8e8e3;   /* ball game background */
+  display: block;
+}
+
+/* Fallacy detector */
+.welcome-box {
+  border: 3px solid black;
+  border-radius: 24px;
+  padding: 24px 40px;
+  font-size: 14px;
+  text-align: center;
+  max-width: 370px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-field {
+  width: 420px;
+  padding: 14px 18px;
+  border: 3px solid #9ca3af;
+  border-radius: 999px;
+  outline: none;
+  font-size: 14px;
+  overflow-y: scroll;
+}
+
+.send-button {
+  width: 42px;
+  height: 42px;
+  border: 3px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background: #f3f4f6;
+}
+
+.icon {
+  font-size: 18px;
+  line-height: 1;
+}
