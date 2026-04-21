@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-4xl p-10 space-y-8">
+  <div class="container mx-auto p-10 space-y-8">
     
     <section class="space-y-4">
       <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -44,7 +44,7 @@
             <Badge variant="secondary">API Project</Badge>
             <Badge variant="secondary">Web Scrape Project</Badge>
             <Badge variant="secondary">SAA-C03 Study Material</Badge>
-            <Badge>Vue 3 Upgraded ✓</Badge>
+            <Badge>Vue 3 Upgraded = in progress</Badge>
           </div>
         </CardContent>
       </Card>

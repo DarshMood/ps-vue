@@ -1,11 +1,29 @@
 <template>
-    <h1>Brick Breaker</h1>
+  <div class="container mx-auto max-w-110 py-10">
+    <Card>
+      <CardHeader>
+        <CardTitle class="text-3xl font-bold">Brick Breaker</CardTitle>
+        </CardHeader>
 
-    <div class="game-window">
-        <canvas ref="gameCanvas" width="400" height="400"></canvas>
-    </div>
-
-    <router-link to="/">← Back to Home</router-link>
+        <CardContent class="space-y-4">
+          <!-- Game Canvas -->
+          <div class="border rounded-lg overflow-hidden bg-muted p-2 flex justify-center">
+            <canvas
+              ref="gameCanvas"
+              width="400"
+              height="400"
+              class="rounded-md shadow-sm"
+            ></canvas>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <router-link to="/">
+            <Button variant="secondary">← Back to Home</Button>
+          </router-link>
+        </CardFooter>
+      </Card>
+  </div>
+  <
 </template>
 
 <script setup>

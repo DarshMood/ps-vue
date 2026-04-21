@@ -1,3 +1,5 @@
+
+<!---@TODO: This needs a shadcn overhaul -->
 <template>
   <p>
     <label for="sql-input">Paste your wrapped sql</label>
