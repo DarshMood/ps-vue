@@ -1,38 +1,61 @@
 <template>
-  <div class="home">
-    <h1>Welcome to my site</h1>
+  <div class="container max-w-4xl p-10 space-y-8">
+    
+    <section class="space-y-4">
+      <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl">
+        Welcome to my site
+      </h1>
+      <p class="text-xl text-muted-foreground leading-relaxed">
+        Built from scratch with Vue 3 to showcase my work and share a little about myself. 
+        Designed to be scalable so I can build as I go. Check it out!
+      </p>
+    </section>
 
-    <p>
-      This is my personal website. Built from scratch with Vue3 utilized to showcase some work of mine and share a little about myself.
-      This website was designed to be scalable to allow me to build things as I want. Check it out!
-    </p>
+    <Separator />
 
-    <h2>Pages</h2>
-    <ul>
-      <li><router-link to="/about">About Me</router-link></li>
-      <li><a href="/games">Games</a></li>
-      <li><a href="/tools">Tools</a></li>
-    </ul>
+    <div class="grid gap-6 md:grid-cols-2">
+      
+      <Card>
+        <CardHeader>
+          <CardTitle>Explore</CardTitle>
+          <CardDescription>Navigate through the different sections of my portfolio.</CardDescription>
+        </CardHeader>
+        <CardContent class="flex flex-col gap-2">
+          <Button as-child variant="outline" class="justify-start">
+            <router-link to="/about">About Me</router-link>
+          </Button>
+          <Button as-child variant="outline" class="justify-start">
+            <router-link to="/games">Games Collection</router-link>
+          </Button>
+          <Button as-child variant="outline" class="justify-start">
+            <router-link to="/tools">Developer Tools</router-link>
+          </Button>
+        </CardContent>
+      </Card>
 
-    <h2>Coming Soon...</h2>
-    <ul>
-      <li>VUE3 Upgrade</li>
-      <li>Traveling Salesman</li>
-      <li>API Project</li> 
-      <li>Web Scrape Project</li>
-      <li>SAA-C03 Study Material</li>
-    </ul>
+      <Card>
+        <CardHeader>
+          <CardTitle>Roadmap</CardTitle>
+          <CardDescription>What I'm currently working on.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="secondary">Traveling Salesman</Badge>
+            <Badge variant="secondary">API Project</Badge>
+            <Badge variant="secondary">Web Scrape Project</Badge>
+            <Badge variant="secondary">SAA-C03 Study Material</Badge>
+            <Badge>Vue 3 Upgraded ✓</Badge>
+          </div>
+        </CardContent>
+      </Card>
+
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomePage'
-}
+<script setup>
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
 </script>
-
-<style scoped>
-.home {
-  padding: 20px;
-}
-</style>

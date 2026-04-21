@@ -1,7 +1,15 @@
 import { defineConfig } from 'vite'
+import path from "node:path"
 import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), tailwindcss()],
+  resolve: {
+    alias: {
+      // This tells Shadcn (and Vite) that "@" = your "src" folder
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 })
