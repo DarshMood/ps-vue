@@ -13,6 +13,7 @@ const props = defineProps({
   },
   asChild: { type: Boolean, required: false },
   as: { type: null, required: false, default: "button" },
+  disabled: { type: Boolean, default: false}
 });
 </script>
 
@@ -23,7 +24,11 @@ const props = defineProps({
     :data-size="size"
     :as="as"
     :as-child="asChild"
-    :class="cn(buttonVariants({ variant, size }), props.class)"
+    :disabled="disabled"
+    :class="cn(
+      buttonVariants({ variant, size }),
+      props.class
+    )"
   >
     <slot />
   </Primitive>
