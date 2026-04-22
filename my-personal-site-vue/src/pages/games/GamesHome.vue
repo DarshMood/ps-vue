@@ -1,28 +1,26 @@
+<script setup lang="ts">
+import GameCard from '@/components/ui/card/GameCard.vue';
+import brickBreakImg from '@/assets/brick-break.png';
+import ticTacToeImg from '@/assets/tictactoe.png';
+
+</script>
+
 <template>
   <div class="games container mx-auto p-10 space-y-6">
+    <GameCard
+      title="Tic-Tac-Toe"
+      :image="ticTacToeImg"
+      link="/tic-tac-toe"
+    />
+  <Separator />
+    <GameCard
+      title="Brick Breaker"
+      :image="brickBreakImg"
+      link="/brick-breaker"
+     />
     
-    <Card>
-      <CardContent class="flex flex-col items-center gap-4">
-        <!-- @TODO: MAKE A GAME CARD COMPONENT -->
-        <img
-          src="../../assets/tictactoe.png"
-          alt="brick break picture"
-          class="justify-center thumbnail"
-        />
-        <Button as-child variant="outline" class="justify-start">
-          <router-link to="/tic-tac-toe">Tic-Tac-Toe</router-link>
-        </Button>
-
-        <img
-          src="../../assets/brick-break.png"
-          alt="brick break picture"
-          class="justify-center thumbnail"
-        />
-        <Button as-child variant="outline" class="w-full">
-          <router-link to="/brick-breaker">Brick Breaker</router-link>
-        </Button>
-
-      </CardContent>
-    </Card>
+    <Button as-child variant="outline" class="w-full">
+      <router-link to="/"><- Back to Home</router-link>
+    </Button>
   </div>
 </template>

@@ -3,11 +3,12 @@
     
     <section class="space-y-4">
       <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Welcome to my site
+        Zach's Portfolio
       </h1>
       <p class="text-xl text-muted-foreground leading-relaxed">
-        Built from scratch with Vue 3 to showcase my work and share a little about myself. 
-        Designed to be scalable so I can build as I go. Check it out!
+        Built with Vue3 to showcase my work and share a little about myself. 
+        Designed to be scalable so I can build as I go. 
+        This webspace serves as a personal workshop for me to build my ideas.
       </p>
     </section>
 
@@ -18,7 +19,7 @@
       <Card>
         <CardHeader>
           <CardTitle>Explore</CardTitle>
-          <CardDescription>Navigate through the different sections of my portfolio.</CardDescription>
+          <CardDescription>Check out some of the stuff I've made.</CardDescription>
         </CardHeader>
         <CardContent class="flex flex-col gap-2">
           <Button as-child variant="outline" class="justify-start">
@@ -36,7 +37,7 @@
       <Card>
         <CardHeader>
           <CardTitle>Roadmap</CardTitle>
-          <CardDescription>What I'm currently working on.</CardDescription>
+          <CardDescription>Future Plans</CardDescription>
         </CardHeader>
         <CardContent>
           <div class="flex flex-wrap gap-2">
