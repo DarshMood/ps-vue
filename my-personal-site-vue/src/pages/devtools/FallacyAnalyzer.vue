@@ -9,12 +9,20 @@
       </p>
     </div>
 
-    <!-- (Future) Results Area -->
+    <!-- Results area -->
     <div class="flex-1 w-full max-w-2xl flex items-center justify-center">
-      <div class="text-gray-400 italic">
+      <div v-if="isIntroTextVisible" class="text-gray-400 italic">
         Enter an argument below to begin analysis.
       </div>
     </div>
+    <div class="w-[60%] flex flex-col items-end justify-end">
+      <div v-for="turn in turns" :key="turn">
+          <div class="p-3 rounded-lg bg-blue-200 border break-all my-2">
+            {{ turn.text }}
+          </div>
+        </div>
+    </div>
+
 
     <!-- Input Area -->
     <div class="w-full max-w-2xl mb-10">
@@ -39,7 +47,21 @@
   import 'primeicons/primeicons.css';
   import { ref } from 'vue'
 
+  const isIntroTextVisible = ref(true);
+
   const turns = ref([]);
   const currentSpeaker = ref('A');
   const argument = ref('')
+
+  function submitArgument() {
+    turns.value.push({
+      Speaker: currentSpeaker.value,
+      text: argument.value
+    });
+    isIntroTextVisible.value = false;
+    argument.value = "";
+
+    // API call to backend and Ollama
+  }
+
 </script>
