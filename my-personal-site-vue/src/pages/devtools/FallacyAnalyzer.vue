@@ -15,19 +15,29 @@
         Enter an argument below to begin analysis.
       </div>
     </div>
-    <div class="w-[60%] flex flex-col items-end justify-end">
-      <div v-for="turn in turns" :key="turn">
-          <div class="p-3 rounded-lg bg-blue-200 border break-all my-2">
-            {{ turn.text }}
-          </div>
+    <div class="w-[60%] flex flex-col">
+      <div
+        v-for="turn in turns"
+        :key="turn"
+        class="flex w-full"
+        :class="turn.Speaker === 'A' ? 'justify-end' : 'justify-start'"
+      >
+        <div
+          :class="turn.Speaker === 'A'
+            ? 'p-3 rounded-lg bg-blue-100 border break-all my-2'
+            : 'p-3 rounded-lg bg-red-100 border break-all my-2'"
+        >
+          {{ turn.text }}
         </div>
+      </div>
     </div>
+
 
 
     <!-- Input Area -->
     <div class="w-full max-w-2xl mb-10">
-      <div class="flex items-end gap-3 bg-white shadow-md rounded-xl p-4">
-        <textarea
+      <div v-if="currentSpeaker == 'A'" class="flex items-end gap-3 bg-white shadow-md rounded-xl p-4">
+        <textarea 
           v-model="argument"
           placeholder="Type your argument here..."
           class="w-full h-32 p-3 rounded-lg border overflow-y-auto focus:outline focus:ring-2 focus:ring-blue-400"
@@ -38,7 +48,21 @@
             class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
         >
             <span class="pi pi-angle-double-up"></span>
-      </Button>
+        </Button>
+      </div>
+      <div v-else="currentSpeaker == 'B'" class="flex items-end gap-3 bg-white shadow-md rounded-xl p-4">
+        <textarea 
+          v-model="argument"
+          placeholder="Type your argument here..."
+          class="w-full h-32 p-3 rounded-lg border overflow-y-auto focus:outline focus:ring-2 focus:ring-red-400"
+        ></textarea>
+        <Button 
+            :disabled="argument === ''"
+            @click="submitArgument"
+            class="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700"
+        >
+            <span class="pi pi-angle-double-up"></span>
+        </Button>
       </div>
     </div>
   </div>
@@ -61,6 +85,7 @@
     });
     isIntroTextVisible.value = false;
     argument.value = "";
+    currentSpeaker.value = currentSpeaker.value === 'A' ? 'B' : 'A';
 
     // API call to backend and Ollama
   }
