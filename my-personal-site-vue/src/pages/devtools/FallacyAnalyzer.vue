@@ -83,8 +83,20 @@
   const argument = ref('')
   const isThinking = ref(false);
 
-  function submitArgument() {
-  // Push human turn
+  function formatFallacies(json) {
+    console.log(json);
+  if (!json.fallacies || json.fallacies.length === 0) {
+    return "None detected.";
+  }
+
+  return json.fallacies
+    .map(f => 
+      `🧩 ${f.type}\n${f.explanation}\n\nEvidence: ${f.evidence}`
+    )
+    .join("\n\n");
+}
+
+async function submitArgument() {
   turns.value.push({
     Speaker: currentSpeaker.value,
     text: argument.value
@@ -92,22 +104,30 @@
 
   isIntroTextVisible.value = false;
   const humanSpeaker = currentSpeaker.value;
+
+  // Capture the text BEFORE clearing it
+  const textToAnalyze = argument.value;
   argument.value = "";
 
   isThinking.value = true;
 
-  //const aiText = await getAIResponse(); // your backend call
+  // Correct fetch call
+  const response = await fetch("http://localhost:3000/analyze", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: textToAnalyze })   // <-- FIXED
+  });
 
-  const aiText = "I AM AI";
+  const data = await response.json();               // <-- FIXED
+
   turns.value.push({
-    Speaker: 'AI',
-    text: aiText
+    Speaker: "AI",
+    text: formatFallacies(data)
   });
 
   isThinking.value = false;
 
-  // Flip human speaker AFTER AI responds
   currentSpeaker.value = humanSpeaker === 'A' ? 'B' : 'A';
-  }
+}
 
 </script>
