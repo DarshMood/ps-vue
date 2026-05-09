@@ -28,9 +28,9 @@
   >
     <div
       :class="{
-        'p-3 rounded-lg bg-blue-100 border break-all my-2': turn.Speaker === 'A',
-        'p-3 rounded-lg bg-red-100 border break-all my-2': turn.Speaker === 'B',
-        'p-3 rounded-lg bg-gray-200 border break-all my-2 text-center max-w-[80%]': turn.Speaker === 'AI'
+        'p-3 rounded-lg bg-blue-100 border my-2 break-words': turn.Speaker === 'A',
+        'p-3 rounded-lg bg-red-100 border my-2 break-words': turn.Speaker === 'B',
+        'p-3 rounded-lg bg-gray-200 border my-2 max-w-[80%] whitespace-pre-wrap break-words text-left': turn.Speaker === 'AI'
       }"
     >
       {{ turn.text }}
@@ -83,15 +83,14 @@
   const argument = ref('')
   const isThinking = ref(false);
 
-  function formatFallacies(json) {
-    console.log(json);
+function formatFallacies(json) {
   if (!json.fallacies || json.fallacies.length === 0) {
     return "None detected.";
   }
 
   return json.fallacies
     .map(f => 
-      `🧩 ${f.type}\n${f.explanation}\n\nEvidence: ${f.evidence}`
+      `🤓 ${f.type}\n🔑${f.explanation}\n🔎Evidence: ${f.evidence}\n\n`
     )
     .join("\n\n");
 }

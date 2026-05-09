@@ -17,13 +17,23 @@ app.post("/analyze", async (req, res) => {
         {
           role: "user",
           content: `
-            Analyze the following text for logical fallacies.
-
-            Explain clearly:
-            - the fallacy type(s)
-            - why it is a fallacy
-            - the exact evidence from the text
-
+            Analyze the text for logical fallacies.
+                    
+            For each fallacy found provide:
+            - Fallacy Name
+            - Why it is a fallacy
+            - Exact quote from the text
+            - Confidence 1-10
+                    
+            Rules:
+            - A statement can contain multiple fallacies.
+            - Only report fallacies with confidence 4 or higher.
+            - Focus on errors in reasoning, not insults or emotional language.
+            - Use the most specific fallacy possible.
+                    
+            If no fallacies are found respond exactly:
+            No Fallacies Detected
+                    
             Text:
             ${JSON.stringify(userText)}
           `
