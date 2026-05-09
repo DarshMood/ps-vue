@@ -115,10 +115,10 @@ async function submitArgument() {
   const response = await fetch("http://localhost:3000/analyze", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: textToAnalyze })   // <-- FIXED
+    body: JSON.stringify({ text: textToAnalyze })  
   });
 
-  const data = await response.json();               // <-- FIXED
+  const data = await response.json();
 
   turns.value.push({
     Speaker: "AI",
@@ -129,5 +129,4 @@ async function submitArgument() {
 
   currentSpeaker.value = humanSpeaker === 'A' ? 'B' : 'A';
 }
-
 </script>

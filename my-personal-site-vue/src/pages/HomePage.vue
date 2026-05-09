@@ -3,12 +3,12 @@
     
     <section class="space-y-4">
       <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Zach's Portfolio
+        Zach's Workshop
       </h1>
       <p class="text-xl text-muted-foreground leading-relaxed">
         Built with Vue3 to showcase my work and share a little about myself. 
         Designed to be scalable so I can build as I go. 
-        This webspace serves as a personal workshop for me to build my ideas.
+        This webspace serves as a personal workshop for me to manifest my ideas.
       </p>
     </section>
 
@@ -41,13 +41,36 @@
         </CardHeader>
         <CardContent>
           <div class="flex flex-wrap gap-2">
+            <Badge variant="secondary">SAA-C03 Certification</Badge>
             <Badge variant="secondary">Traveling Salesman</Badge>
             <Badge variant="secondary">API Project</Badge>
             <Badge variant="secondary">Web Scrape Project</Badge>
-            <Badge variant="secondary">SAA-C03 Study Material</Badge>
-            <Badge>Vue 3 Upgraded = in progress</Badge>
+            <Badge variant="secondary">AWS Site Hosting</Badge>
           </div>
         </CardContent>
+        <CardHeader>
+          <CardTitle>Needs Polishing</CardTitle>
+          <CardDescription>Work that is majority complete just needs some polish</CardDescription>
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="secondary">Games</Badge>
+              <Badge variant="secondary">Fallacy Analyzer</Badge>
+              <Badge variant="secondary">SQL Cleaner</Badge>
+            </div>
+          </CardContent>
+        </CardHeader>
+        <CardHeader>
+          <CardTitle>Complete</CardTitle>
+          <CardDescription>Mark it done!</CardDescription>
+          <CardContent>
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="secondary">About Me</Badge>
+              <Badge variant="secondary">Backend AI integration</Badge>
+              <Badge variant="secondary">Vue3 Upgrade</Badge>
+              <Badge variant="secondary">Frontend Modernization w/ shadcn</Badge>
+            </div>
+          </CardContent>
+        </CardHeader>
       </Card>
 
     </div>

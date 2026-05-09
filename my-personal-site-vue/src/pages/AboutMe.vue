@@ -15,10 +15,10 @@
           
           <div class="md:col-span-2 space-y-4">
             <p class="leading-relaxed text-muted-foreground">
-              My name is Zachary Mueller. I was born on 08‑22‑1998 in St. Louis, Missouri.
+              My name is Zachary Mueller. I was born Aug. 1998 in St. Louis, Missouri.
               Starting at an early age I had a deep fascination with computers and tech.
               That fascination motivated me to pursue my bachelor's degree in Computer Science
-              at Missouri State University. On 12‑17‑2021 I graduated with my BS in Computer Science
+              at Missouri State University. On Dec. 2021 I graduated with my BS in Computer Science
               and a minor in Math.
             </p>
 
@@ -26,7 +26,7 @@
               Since then, I’ve been working at O’Reilly as a software engineer on the Pricing team,
               doing full‑stack enterprise development, batch job orchestration, multi‑app communication,
               and modernizing legacy codebases. I’m currently studying for my SAA‑C03 certification
-              and excited to continue growing in my career.
+              and excited to continue growing in my career during such an exciting time in Tech!
             </p>
           </div>
 
