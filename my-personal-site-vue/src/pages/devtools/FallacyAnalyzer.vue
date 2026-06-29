@@ -123,9 +123,7 @@ async function submitArgument() {
     Speaker: "AI",
     text: formatFallacies(data)
   });
-
   isThinking.value = false;
-
   currentSpeaker.value = humanSpeaker === 'A' ? 'B' : 'A';
 }
 </script>

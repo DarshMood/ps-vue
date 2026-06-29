@@ -46,6 +46,7 @@
             <Badge variant="secondary">API Project</Badge>
             <Badge variant="secondary">Web Scrape Project</Badge>
             <Badge variant="secondary">AWS Site Hosting</Badge>
+            <Badge variant="secondary">Public Equity Dashboard</Badge>
           </div>
         </CardContent>
         <CardHeader>
